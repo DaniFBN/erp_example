@@ -1,0 +1,7 @@
+name: ERP
+
+packages:
+  - app/
+  - core/
+  - design_system/
+  - dev_tools/
