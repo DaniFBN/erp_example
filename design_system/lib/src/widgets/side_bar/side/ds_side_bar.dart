@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../../../../design_system.dart';
+
 class DsSideBar extends StatelessWidget {
-  final VoidCallback onTap;
+  final double width;
   final VoidCallback onThemeTap;
   final VoidCallback onLogoutTap;
+  final int itemCount;
+  final Widget Function(BuildContext context, int index) itemBuilder;
 
   const DsSideBar({
     super.key,
     required this.onThemeTap,
     required this.onLogoutTap,
-    required this.onTap,
+    required this.itemCount,
+    required this.itemBuilder,
+    required this.width,
   });
 
   @override
@@ -18,15 +24,18 @@ class DsSideBar extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Container(
+      width: width,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
       color: colorScheme.primary,
       child: Column(
         children: [
-          IconButton(
-            onPressed: onTap,
-            icon: Icon(Icons.add, color: theme.primaryIconTheme.color),
+          Expanded(
+            child: ListView.separated(
+              itemCount: itemCount,
+              itemBuilder: itemBuilder,
+              separatorBuilder: (_, __) => SizedBox(height: Responsive.size(8)),
+            ),
           ),
-          const Spacer(),
           const CircleAvatar(
             backgroundColor: Colors.red,
           ),

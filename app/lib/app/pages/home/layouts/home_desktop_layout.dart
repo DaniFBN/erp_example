@@ -9,7 +9,8 @@ class HomeDesktopLayout extends StatefulWidget {
 }
 
 class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
-  bool showMenu = false;
+  int? selectedIndex;
+  bool get showMenu => selectedIndex != null;
 
   @override
   Widget build(BuildContext context) {
@@ -17,24 +18,43 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
       body: Row(
         children: [
           DsSideBar(
-            onThemeTap: () {
-              print('theme');
-            },
-            onLogoutTap: () {
-              print('logout');
-            },
-            onTap: () {
-              setState(() {
-                showMenu = !showMenu;
-              });
+            width: 64,
+            onThemeTap: () => print('theme'),
+            onLogoutTap: () => print('logout'),
+            itemCount: 5,
+            itemBuilder: (_, index) {
+              return DsSideBarItem(
+                isSelected: selectedIndex == index,
+                icon: Icons.add,
+                onTap: () {
+                  setState(() {
+                    if (selectedIndex == index) {
+                      selectedIndex = null;
+                    } else {
+                      selectedIndex = index;
+                    }
+                  });
+                },
+              );
             },
           ),
           ClipRect(
             child: AnimatedAlign(
-              duration: const Duration(seconds: 5),
+              duration: const Duration(milliseconds: 300),
               widthFactor: showMenu ? 1 : 0,
               alignment: Alignment.center,
-              child: const DsMenuBar(),
+              child: DsMenuBar(
+                width: Responsive.size(260),
+                title: 'User $selectedIndex',
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int index) {
+                  return DsMenuBarItem(
+                    icon: Icons.add,
+                    title: 'Cadastrar $index',
+                    onTap: () {},
+                  );
+                },
+              ),
             ),
           ),
         ],

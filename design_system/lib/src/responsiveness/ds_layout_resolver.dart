@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'responsive.dart';
 
-class DsResponsive extends StatelessWidget {
+class DsLayoutResolver extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
   final Widget desktop;
 
-  const DsResponsive({
+  const DsLayoutResolver({
     super.key,
     required this.mobile,
     required this.tablet,

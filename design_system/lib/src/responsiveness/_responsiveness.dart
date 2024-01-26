@@ -1,2 +1,2 @@
-export 'ds_responsive.dart';
+export 'ds_layout_resolver.dart';
 export 'responsive.dart';
