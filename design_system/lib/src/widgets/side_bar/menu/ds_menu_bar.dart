@@ -4,7 +4,7 @@ import '../../../../design_system.dart';
 
 class DsMenuBar extends StatelessWidget {
   final double width;
-  final String title;
+  final Widget title;
   final int itemCount;
   final Widget Function(BuildContext context, int index) itemBuilder;
 
@@ -37,9 +37,9 @@ class DsMenuBar extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(
-              title,
-              style: theme.textTheme.titleLarge,
+            DefaultTextStyle(
+              style: theme.textTheme.titleLarge!,
+              child: title,
             ),
             SizedBox(height: Responsive.size(20)),
             Expanded(

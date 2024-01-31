@@ -7,6 +7,7 @@ class DsSideBar extends StatelessWidget {
   final VoidCallback onThemeTap;
   final VoidCallback onLogoutTap;
   final int itemCount;
+  final Widget trailing;
   final Widget Function(BuildContext context, int index) itemBuilder;
 
   const DsSideBar({
@@ -16,17 +17,17 @@ class DsSideBar extends StatelessWidget {
     required this.itemCount,
     required this.itemBuilder,
     required this.width,
+    required this.trailing,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = Theme.of(context).colorScheme;
 
     return Container(
       width: width,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
-      color: colorScheme.primary,
+      color: theme.appBarTheme.backgroundColor,
       child: Column(
         children: [
           Expanded(
@@ -36,18 +37,9 @@ class DsSideBar extends StatelessWidget {
               separatorBuilder: (_, __) => SizedBox(height: Responsive.size(8)),
             ),
           ),
-          const CircleAvatar(
-            backgroundColor: Colors.red,
-          ),
-          const SizedBox(height: 8),
-          IconButton(
-            onPressed: onThemeTap,
-            icon: Icon(Icons.light_mode, color: theme.primaryIconTheme.color),
-          ),
-          const SizedBox(height: 8),
-          IconButton(
-            onPressed: onLogoutTap,
-            icon: Icon(Icons.logout, color: theme.primaryIconTheme.color),
+          IconTheme(
+            data: theme.appBarTheme.actionsIconTheme!,
+            child: trailing,
           ),
         ],
       ),

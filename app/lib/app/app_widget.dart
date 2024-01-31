@@ -1,3 +1,4 @@
+import 'package:auth_module/auth_module.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,9 @@ class AppWidget extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
+        '/login': (context) => const LoginPage(),
         '/': (context) => const HomePage(),
       },
     );

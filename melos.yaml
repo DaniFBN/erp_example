@@ -3,5 +3,6 @@ name: ERP
 packages:
   - app/
   - core/
+  - auth_module/
   - design_system/
   - dev_tools/

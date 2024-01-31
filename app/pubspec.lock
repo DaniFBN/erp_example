@@ -9,6 +9,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auth_module:
+    dependency: "direct main"
+    description:
+      path: "../auth_module"
+      relative: true
+    source: path
+    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -51,9 +58,11 @@ packages:
   dev_tools:
     dependency: "direct dev"
     description:
-      path: "../dev_tools"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "546c064bcd1c444d1bbd65e81ee6f8204abe3523"
+      url: "https://github.com/DaniFBN/example_multirepo"
+    source: git
     version: "0.0.1"
   fake_async:
     dependency: transitive
@@ -69,7 +78,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_lints:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: flutter_lints
       sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
@@ -192,3 +201,4 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.5 <4.0.0"
+  flutter: ">=1.17.0"

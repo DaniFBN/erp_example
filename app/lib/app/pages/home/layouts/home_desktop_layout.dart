@@ -1,5 +1,11 @@
+import 'dart:developer';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/logout_button_widget.dart';
+import 'widgets/theme_button_widget.dart';
+import 'widgets/user_image_widget.dart';
 
 class HomeDesktopLayout extends StatefulWidget {
   const HomeDesktopLayout({super.key});
@@ -19,8 +25,8 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
         children: [
           DsSideBar(
             width: 64,
-            onThemeTap: () => print('theme'),
-            onLogoutTap: () => print('logout'),
+            onThemeTap: () => log('theme'),
+            onLogoutTap: () => log('logout'),
             itemCount: 5,
             itemBuilder: (_, index) {
               return DsSideBarItem(
@@ -37,6 +43,15 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                 },
               );
             },
+            trailing: Column(
+              children: [
+                const UserImageWidget(),
+                const SizedBox(height: 8),
+                ThemeButtonWidget(onTap: () {}),
+                const SizedBox(height: 8),
+                LogoutButtonWidget(onTap: () {}),
+              ],
+            ),
           ),
           ClipRect(
             child: AnimatedAlign(
@@ -45,7 +60,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
               alignment: Alignment.center,
               child: DsMenuBar(
                 width: Responsive.size(260),
-                title: 'User $selectedIndex',
+                title: Text('User $selectedIndex'),
                 itemCount: 5,
                 itemBuilder: (BuildContext context, int index) {
                   return DsMenuBarItem(
