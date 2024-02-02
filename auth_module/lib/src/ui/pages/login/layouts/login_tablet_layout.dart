@@ -1,11 +1,16 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/login_form_component.dart';
+import '../../../../domain/stores/login_store.dart';
+import '../components/login_form_component.dart';
 
 class LoginTabletLayout extends StatelessWidget {
-  const LoginTabletLayout({super.key});
+  final LoginStore loginStore;
 
+  const LoginTabletLayout({
+    super.key,
+    required this.loginStore,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,7 @@ class LoginTabletLayout extends StatelessWidget {
             child: Container(
               width: Responsive.size(900),
               padding: EdgeInsets.all(Responsive.size(32)),
-              child: const LoginFormComponent(),
+              child: LoginFormComponent(loginStore: loginStore),
             ),
           ),
         ],

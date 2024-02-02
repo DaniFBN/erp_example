@@ -1,10 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/login_form_component.dart';
+import '../../../../domain/stores/login_store.dart';
+import '../components/login_form_component.dart';
 
 class LoginDesktopLayout extends StatelessWidget {
-  const LoginDesktopLayout({super.key});
+  final LoginStore loginStore;
+
+  const LoginDesktopLayout({
+    super.key,
+    required this.loginStore,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,7 @@ class LoginDesktopLayout extends StatelessWidget {
             child: Container(
               width: Responsive.size(1200),
               padding: EdgeInsets.all(Responsive.size(40)),
-              child: const LoginFormComponent(),
+              child: LoginFormComponent(loginStore: loginStore),
             ),
           ),
         ],

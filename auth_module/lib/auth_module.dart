@@ -1,3 +1,4 @@
 library auth_module;
 
-export 'src/pages/login/login_page.dart';
+export 'src/routes.dart';
+export 'src/ui/pages/login/login_page.dart';

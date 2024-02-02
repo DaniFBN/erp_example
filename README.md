@@ -1,3 +1,9 @@
+# Ta errado
+
+AuthRepository - Impl(data)
+Store -> try/catch
+ScaffoldMessengerSnackBarService -> variavel global
+
 # App
 
 - HomePage

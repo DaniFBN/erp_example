@@ -1,4 +1,5 @@
 import 'package:auth_module/auth_module.dart';
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,10 @@ class AppWidget extends StatelessWidget {
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
       initialRoute: '/login',
+      scaffoldMessengerKey: snackBarService.scaffoldMessengerKey,
+      navigatorKey: NavigatorService.instance.navigatorKey,
       routes: {
-        '/login': (context) => const LoginPage(),
+        ...AuthRoutes.routes,
         '/': (context) => const HomePage(),
       },
     );
