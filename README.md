@@ -1,3 +1,8 @@
+# Comandos Melos
+
+melos bs
+melos clean
+
 # Ta errado
 
 AuthRepository - Impl(data)
