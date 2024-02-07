@@ -1,18 +1,22 @@
+import 'package:core/core.dart';
+
 import '../../domain/repositories/i_auth_repository.dart';
 import '../../domain/responses/login_response.dart';
 
 class AuthRepository implements IAuthRepository {
+  final AuthService _authService;
+
+  const AuthRepository(this._authService);
+
   @override
-  Future<LoginResponse> login(String email, String password) async {
-    if (email != 'daniel.noronha@fteam.dev') {
-      throw 'Usuario inválido';
-    }
-    if (password != '12345678A') {
-      throw 'Senha inválida';
-    }
+  AsyncResult<LoginResponse> login(String email, String password) async {
+    try {
+      final response = await _authService.login(email, password);
 
-    await Future.delayed(const Duration(seconds: 1));
-
-    return const LoginResponse('whatever');
+      return Success(LoginResponse(response.id));
+    } on AppException catch (e) {
+      return Failure(e);
+    }
   }
 }
+

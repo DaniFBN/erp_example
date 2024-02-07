@@ -7,7 +7,7 @@ import 'domain/stores/login_store.dart';
 class AuthRoutes {
   static final routes = {
     '/login': (context) => LoginPage(
-          loginStore: LoginStore(AuthRepository()),
+          loginStore: LoginStore(AuthRepository(firebaseAuth)),
           snackBarService: snackBarService,
         ),
   };

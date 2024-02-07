@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -71,6 +72,12 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                 },
               ),
             ),
+          ),
+          FutureBuilder(
+            future: firebaseAuth.getCurrentUser(),
+            builder: (context, snapshot) {
+              return Text(snapshot.data?.email ?? 'Whatever');
+            },
           ),
         ],
       ),

@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         case LoadingLoginState():
           return;
         case ErrorLoginState():
-          snackBarService.showSnackBarByText(state.error);
+          snackBarService.showSnackBarByText(state.exception.message);
         case SuccessLoginState():
           NavigatorService.instance.pushReplacement('/');
       }

@@ -5,9 +5,12 @@ melos clean
 
 # Ta errado
 
-AuthRepository - Impl(data)
-Store -> try/catch
 ScaffoldMessengerSnackBarService -> variavel global
+FirebaseAuth -> variavel global
+
+# A Fazer
+DI
+UserStore -> Armazenar o estado da sessão
 
 # App
 

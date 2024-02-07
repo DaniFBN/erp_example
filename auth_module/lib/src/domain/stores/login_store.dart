@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../repositories/i_auth_repository.dart';
@@ -14,12 +16,11 @@ class LoginStore extends Bloc<LoginEvent, LoginState> {
   Future<void> _login(SubmitLoginEvent event, Emitter<LoginState> emit) async {
     emit(const LoadingLoginState());
 
-    try {
-      final response = await _repository.login(event.email, event.password);
+    final response = await _repository.login(event.email, event.password);
 
-      emit(SuccessLoginState(response.userID));
-    } catch (e) {
-      emit(ErrorLoginState(e.toString()));
-    }
+    response.fold(
+      (value) => emit(SuccessLoginState(value.userID)),
+      (e) => emit(ErrorLoginState(e)),
+    );
   }
 }
