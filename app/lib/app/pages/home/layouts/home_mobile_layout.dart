@@ -1,7 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/theme_button_widget.dart';
+import 'components/theme_button_widget.dart';
 
 class HomeMobileLayout extends StatelessWidget {
   const HomeMobileLayout({super.key});

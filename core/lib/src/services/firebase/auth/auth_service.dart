@@ -1,6 +1,6 @@
 import 'helpers/models/user_auth_model.dart';
 
-abstract class AuthService {
+abstract class IAuthService {
   /// Should login user if [email] and [password] it's correct
   ///
   /// Tips:

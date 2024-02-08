@@ -13,11 +13,13 @@ import 'layouts/login_tablet_layout.dart';
 class LoginPage extends StatefulWidget {
   final ISnackBarService snackBarService;
   final LoginStore loginStore;
+  final UserStore userStore;
 
   const LoginPage({
     super.key,
     required this.snackBarService,
     required this.loginStore,
+    required this.userStore,
   });
 
   @override
@@ -37,8 +39,9 @@ class _LoginPageState extends State<LoginPage> {
         case LoadingLoginState():
           return;
         case ErrorLoginState():
-          snackBarService.showSnackBarByText(state.exception.message);
+          widget.snackBarService.showSnackBarByText(state.exception.message);
         case SuccessLoginState():
+          widget.userStore.changeUser(state.userID);
           NavigatorService.instance.pushReplacement('/');
       }
     });
@@ -60,4 +63,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

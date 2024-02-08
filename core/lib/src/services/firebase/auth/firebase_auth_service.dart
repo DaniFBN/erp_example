@@ -2,9 +2,8 @@ import 'package:flutter/foundation.dart';
 
 import '_auth_service.dart';
 
-class FirebaseAuthService implements AuthService {
-  FirebaseAuthService(this._email)
-      : _provider = ValueNotifier(_email);
+class FirebaseAuthService implements IAuthService {
+  FirebaseAuthService(this._email) : _provider = ValueNotifier(_email);
 
   final EmailProvider _email;
   final ValueNotifier<AuthProvider> _provider;

@@ -5,4 +5,5 @@ packages:
   - core/
   - auth_module/
   - design_system/
+  - global_dependencies/
   - dev_tools/

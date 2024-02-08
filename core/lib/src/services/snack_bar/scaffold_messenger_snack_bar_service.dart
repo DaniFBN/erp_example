@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'i_snack_bar_service.dart';
 
-final snackBarService = ScaffoldMessengerSnackBarService();
-
 class ScaffoldMessengerSnackBarService implements ISnackBarService {
   final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey;
 
@@ -11,6 +9,9 @@ class ScaffoldMessengerSnackBarService implements ISnackBarService {
       : scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
   ScaffoldMessengerState get _state => scaffoldMessengerKey.currentState!;
+
+  @override
+  GlobalKey<ScaffoldMessengerState>? get key => scaffoldMessengerKey;
 
   @override
   Future<void> showSnackBar(SnackBar snackBar) async {

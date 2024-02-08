@@ -18,8 +18,9 @@ class LoginFormComponent extends StatefulWidget {
 
 class _LoginFormComponentState extends State<LoginFormComponent> {
   final formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController =
+      TextEditingController(text: 'daniel.noronha@fteam.dev');
+  final passwordController = TextEditingController(text: '12345678A');
 
   void login() {
     final isValid = formKey.currentState!.validate();

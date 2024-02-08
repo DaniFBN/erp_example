@@ -1,14 +1,19 @@
-import 'package:core/core.dart';
+import 'package:flutter/material.dart';
+import 'package:global_dependencies/global_dependencies.dart';
 
 import '../auth_module.dart';
-import 'data/repositories/auth_repository.dart';
-import 'domain/stores/login_store.dart';
+import 'ui/pages/login/di_login_widget.dart';
 
 class AuthRoutes {
   static final routes = {
-    '/login': (context) => LoginPage(
-          loginStore: LoginStore(AuthRepository(firebaseAuth)),
-          snackBarService: snackBarService,
+    '/login': (BuildContext context) => DiLoginWidget(
+          builder: (context) {
+            return LoginPage(
+              loginStore: context.read(),
+              snackBarService: context.read(),
+              userStore: context.read(),
+            );
+          },
         ),
   };
 }

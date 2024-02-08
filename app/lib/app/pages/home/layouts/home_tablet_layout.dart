@@ -1,12 +1,14 @@
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/logout_button_widget.dart';
-import 'widgets/theme_button_widget.dart';
-import 'widgets/user_image_widget.dart';
+import 'components/logout_button_widget.dart';
+import 'components/theme_button_widget.dart';
+import 'components/user_image_widget.dart';
 
 class HomeTabletLayout extends StatelessWidget {
-  const HomeTabletLayout({super.key});
+  final UserStore userStore;
+  const HomeTabletLayout({super.key, required this.userStore});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class HomeTabletLayout extends StatelessWidget {
           const SizedBox(height: 8),
           ThemeButtonWidget(onTap: () {}),
           const SizedBox(height: 8),
-          LogoutButtonWidget(onTap: () {}),
+          LogoutButtonWidget(userStore: userStore),
         ],
         title: 'Home',
       ),

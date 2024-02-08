@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:global_dependencies/global_dependencies.dart';
 
 import '../repositories/i_auth_repository.dart';
 import 'events/login_event.dart';

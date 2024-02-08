@@ -1,17 +1,18 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class LogoutButtonWidget extends StatelessWidget {
-  final VoidCallback onTap;
+  final UserStore userStore;
 
   const LogoutButtonWidget({
     super.key,
-    required this.onTap,
+    required this.userStore,
   });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: onTap,
+      onPressed: userStore.logout,
       icon: const Icon(Icons.logout),
     );
   }

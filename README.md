@@ -5,12 +5,46 @@ melos clean
 
 # Ta errado
 
-ScaffoldMessengerSnackBarService -> variavel global
-FirebaseAuth -> variavel global
 
 # A Fazer
-DI
-UserStore -> Armazenar o estado da sessão
+
+Splash -> Decidir entre login ou home
+
+# Planejamento
+8h Componentização - OK
+2h Acessibilidade
+4h Animação
+2h Internacionalização
+
+Amanha
+1h Linter
+1h Documentação
+8h Mod
+8h Arch
+6h API
+6h Teste
+4h Nativo
+2h Deploy
+
+36
+
+# Arch
+
+```
+AppWidget
+  DiGlobalWidget
+    internal
+      DiServiceWidget -> SnackBar/IAuthService
+      DiUserWidget -> UserStore/IUserRepository
+    builder
+      MaterialApp
+        routes
+          /login
+            DiLoginWidget -> LoginStore/AuthRepository
+              LoginPage -> SnackBar/LoginStore/UserStore
+          /home
+            HomePage -> UserStore
+```
 
 # App
 
@@ -49,3 +83,5 @@ UserStore -> Armazenar o estado da sessão
 # DevTools
 
 - Linter
+
+

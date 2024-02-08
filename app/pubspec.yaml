@@ -16,6 +16,9 @@ dependencies:
     path: ../core
   design_system:
     path: ../design_system
+  global_dependencies:
+    path: ../global_dependencies
+
   auth_module:
     path: ../auth_module
 
