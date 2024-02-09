@@ -8,6 +8,8 @@ class UserStore extends Store<UserState> {
 
   UserStore(this._repository) : super(UserState.initState());
 
+  bool get isAuthenticated => state is AuthenticatedUserState;
+
   Future<void> loadUser() async {
     setLoading(true);
 

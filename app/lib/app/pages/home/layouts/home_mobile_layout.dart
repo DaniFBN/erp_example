@@ -10,12 +10,14 @@ class HomeMobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DsMenuBar(
+        // TODO(danifbn): Intl
         title: const Text('User'),
         itemCount: 3,
         width: 300,
         itemBuilder: (BuildContext context, int index) {
           return DsMenuBarItem(
             icon: Icons.add,
+            // TODO(danifbn): Intl
             title: 'Whatever',
             onTap: () {},
           );
@@ -25,6 +27,7 @@ class HomeMobileLayout extends StatelessWidget {
         actions: [
           ThemeButtonWidget(onTap: () {}),
         ],
+        // TODO(danifbn): Intl
         title: 'Home',
       ),
     );

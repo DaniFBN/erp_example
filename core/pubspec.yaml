@@ -14,6 +14,8 @@ dependencies:
 
   firebase_core: 2.25.4
   firebase_auth: 4.17.4
+  l10n:
+    path: ../l10n
   global_dependencies:
     path: ../global_dependencies
 

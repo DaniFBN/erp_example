@@ -1,6 +1,8 @@
-# melos_managed_dependency_overrides: dev_tools,global_dependencies
+# melos_managed_dependency_overrides: dev_tools,global_dependencies,l10n
 dependency_overrides:
   dev_tools:
     path: ../dev_tools
   global_dependencies:
     path: ../global_dependencies
+  l10n:
+    path: ../l10n

@@ -1,5 +1,8 @@
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:global_dependencies/global_dependencies.dart';
+import 'package:l10n/l10n.dart';
 
 import '../../../../domain/stores/events/login_event.dart';
 import '../../../../domain/stores/login_store.dart';
@@ -36,32 +39,35 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
   }
 
   String? passwordValidator(String? value) {
+    final translate = AppLocalizations.of(context);
+
     if (value == null || value.isEmpty) {
-      return 'Campo obrigatório';
+      return translate.requiredField;
     }
 
     if (!RegExp(r'[0-9]+').hasMatch(value)) {
-      return 'A senha deve conter um numero';
+      return translate.passwordRequireNumber;
     }
 
     if (!RegExp(r'[a-zA-Z]+').hasMatch(value)) {
-      return 'A senha deve conter uma letra';
+      return translate.passwordRequireLetter;
     }
 
     if (value.length < 8) {
-      return 'Senha muito pequena';
+      return translate.password;
     }
 
     return null;
   }
 
   String? emailValidator(String? value) {
+    final translate = AppLocalizations.of(context);
     if (value == null || value.isEmpty) {
-      return 'Campo obrigatório';
+      return translate.requiredField;
     }
 
     if (!value.contains('@')) {
-      return 'Insira um email válido';
+      return translate.emailInvalid;
     }
 
     return null;
@@ -77,6 +83,7 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
 
   @override
   Widget build(BuildContext context) {
+    final translate = AppLocalizations.of(context);
     final theme = Theme.of(context);
 
     return Card(
@@ -89,14 +96,20 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
           ),
           child: Column(
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  context.read<IntlStore>().changeLocale(const Locale('en'));
+                },
+                child: const Text('Change'),
+              ),
               Text(
-                'Entrar',
+                translate.enter,
                 style: theme.textTheme.headlineMedium,
               ),
               SizedBox(height: Responsive.size(20)),
               DsTextField(
                 controller: emailController,
-                label: 'Email',
+                label: translate.email,
                 prefix: const Icon(Icons.email_outlined),
                 validator: emailValidator,
                 autofillHints: const [AutofillHints.email],
@@ -105,7 +118,7 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
               SizedBox(height: Responsive.size(12)),
               DsPasswordField(
                 controller: passwordController,
-                label: 'Senha',
+                label: translate.password,
                 validator: passwordValidator,
                 prefix: const Icon(Icons.password),
                 autofillHints: const [AutofillHints.password],
@@ -116,7 +129,7 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text('Esqueci minha senha'),
+                  child: Text(translate.forgotPassword),
                 ),
               ),
               SizedBox(height: Responsive.size(20)),
@@ -126,13 +139,13 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
                   padding: EdgeInsets.symmetric(
                     horizontal: Responsive.size(20),
                   ),
-                  child: const Text('Entrar'),
+                  child: Text(translate.enter),
                 ),
               ),
               SizedBox(height: Responsive.size(40)),
               TextButton(
                 onPressed: () {},
-                child: const Text('Registrar'),
+                child: Text(translate.register),
               ),
             ],
           ),

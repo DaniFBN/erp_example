@@ -1,0 +1,13 @@
+{
+  "appName": "ERP",
+  "enter": "Entrar",
+  "email": "Email",
+  "password": "Senha",
+  "forgotPassword": "Esqueci minha senha",
+  "register": "Registrar",
+  "requiredField": "Campo obrigatório",
+  "passwordRequireNumber": "A senha deve conter um numero",
+  "passwordRequireLetter": "A senha deve conter uma letra",
+  "passwordShort": "Senha muito pequena",
+  "emailInvalid": "Insira um email válido"
+}

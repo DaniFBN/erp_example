@@ -7,3 +7,11 @@ packages:
   - design_system/
   - global_dependencies/
   - dev_tools/
+  - l10n/
+
+scripts:
+  gen-l10n:
+    run: |
+      cd l10n
+      flutter gen-l10n
+    description: Generate translation files in l10n package

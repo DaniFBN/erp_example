@@ -67,11 +67,13 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
               alignment: Alignment.center,
               child: DsMenuBar(
                 width: Responsive.size(260),
+                // TODO(danifbn): Intl
                 title: Text('User $selectedIndex'),
                 itemCount: 5,
                 itemBuilder: (BuildContext context, int index) {
                   return DsMenuBarItem(
                     icon: Icons.add,
+                    // TODO(danifbn): Intl
                     title: 'Cadastrar $index',
                     onTap: () {},
                   );

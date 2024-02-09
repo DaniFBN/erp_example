@@ -29,6 +29,7 @@ class HomeTabletLayout extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return DsMenuBarItem(
             icon: Icons.add,
+            // TODO(danifbn): Intl
             title: 'Whatever',
             onTap: () {},
           );
@@ -42,6 +43,7 @@ class HomeTabletLayout extends StatelessWidget {
           const SizedBox(height: 8),
           LogoutButtonWidget(userStore: userStore),
         ],
+        // TODO(danifbn): Intl
         title: 'Home',
       ),
     );

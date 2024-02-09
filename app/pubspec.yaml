@@ -14,6 +14,8 @@ dependencies:
 
   core:
     path: ../core
+  l10n:
+    path: ../l10n
   design_system:
     path: ../design_system
   global_dependencies:
