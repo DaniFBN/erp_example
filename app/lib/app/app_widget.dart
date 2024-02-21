@@ -18,16 +18,23 @@ class AppWidget extends StatelessWidget {
 
     return DiServiceWidget(
       builder: (context) {
-        return ValueListenableBuilder(
-          valueListenable: context.read<IntlStore>(),
-          builder: (context, locale, _) {
+        final intlStore = context.read<IntlStore>();
+        final themeStore = context.read<ThemeStore>();
+        return AnimatedBuilder(
+          animation: Listenable.merge([
+            intlStore,
+            themeStore,
+          ]),
+          builder: (context, _) {
+            final locale = intlStore.value;
+
             return MaterialApp(
               title: 'ERP',
               scaffoldMessengerKey: context.read<ISnackBarService>().key,
               navigatorKey: NavigatorService.instance.navigatorKey,
 
               // Theme
-              themeMode: ThemeMode.light,
+              themeMode: themeStore.isLight ? ThemeMode.light : ThemeMode.dark,
               theme: AppTheme.light,
               darkTheme: AppTheme.dark,
 
@@ -41,7 +48,11 @@ class AppWidget extends StatelessWidget {
               routes: {
                 ...AuthRoutes.routes,
                 '/': (context) => SplashPage(userStore: context.read()),
-                '/home': (context) => HomePage(userStore: context.read()),
+                '/home': (context) => HomePage(
+                      userStore: context.read(),
+                      themeStore: context.read(),
+                      intlStore: context.read(),
+                    ),
               },
             );
           },

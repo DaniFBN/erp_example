@@ -1,10 +1,16 @@
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-import 'components/theme_button_widget.dart';
+import 'components/theme_button_component.dart';
 
 class HomeMobileLayout extends StatelessWidget {
-  const HomeMobileLayout({super.key});
+  final ThemeStore themeStore;
+
+  const HomeMobileLayout({
+    super.key,
+    required this.themeStore,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class HomeMobileLayout extends StatelessWidget {
       ),
       appBar: DsAppBar(
         actions: [
-          ThemeButtonWidget(onTap: () {}),
+          ThemeButtonComponent(themeStore: themeStore),
         ],
         // TODO(danifbn): Intl
         title: 'Home',

@@ -1,7 +1,5 @@
-import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:global_dependencies/global_dependencies.dart';
 import 'package:l10n/l10n.dart';
 
 import '../../../../domain/stores/events/login_event.dart';
@@ -96,12 +94,6 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
           ),
           child: Column(
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  context.read<IntlStore>().changeLocale(const Locale('en'));
-                },
-                child: const Text('Change'),
-              ),
               Text(
                 translate.enter,
                 style: theme.textTheme.headlineMedium,

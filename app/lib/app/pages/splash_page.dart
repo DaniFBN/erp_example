@@ -24,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
   Future<void> init() async {
     await Future.wait([
       widget.userStore.loadUser(),
-      Future.delayed(const Duration(seconds: 5)),
+      Future.delayed(const Duration(seconds: 2)),
     ]);
 
     if (widget.userStore.isAuthenticated) {

@@ -1,10 +1,10 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-class LogoutButtonWidget extends StatelessWidget {
+class LogoutButtonComponent extends StatelessWidget {
   final UserStore userStore;
 
-  const LogoutButtonWidget({
+  const LogoutButtonComponent({
     super.key,
     required this.userStore,
   });

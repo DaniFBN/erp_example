@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 
 import '../intl/domain/stores/intl_store.dart';
+import '../theme/domain/stores/theme_store.dart';
 import 'data/repositories/user_repository.dart';
 import 'domain/repositories/i_user_repository.dart';
 import 'domain/stores/user_store.dart';
@@ -29,6 +30,10 @@ class DiUserWidget extends StatelessWidget {
         Provider<IntlStore>(
           lazy: true,
           create: (context) => IntlStore(),
+        ),
+        Provider<ThemeStore>(
+          lazy: true,
+          create: (context) => ThemeStore(),
         ),
       ],
       child: Builder(

@@ -4,17 +4,23 @@ import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:global_dependencies/global_dependencies.dart';
+import 'package:l10n/l10n.dart';
 
-import 'components/logout_button_widget.dart';
-import 'components/theme_button_widget.dart';
-import 'components/user_image_widget.dart';
+import 'components/language_button_component.dart';
+import 'components/logout_button_component.dart';
+import 'components/theme_button_component.dart';
+import 'components/user_image_component.dart';
 
 class HomeDesktopLayout extends StatefulWidget {
   final UserStore userStore;
+  final ThemeStore themeStore;
+  final IntlStore intlStore;
 
   const HomeDesktopLayout({
     super.key,
     required this.userStore,
+    required this.themeStore,
+    required this.intlStore,
   });
 
   @override
@@ -27,6 +33,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final translate = AppLocalizations.of(context);
     return Scaffold(
       body: Row(
         children: [
@@ -52,11 +59,13 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
             },
             trailing: Column(
               children: [
-                const UserImageWidget(),
+                const UserImageComponent(),
                 const SizedBox(height: 8),
-                ThemeButtonWidget(onTap: () {}),
+                LanguageButtonComponent(intlStore: widget.intlStore),
                 const SizedBox(height: 8),
-                LogoutButtonWidget(userStore: widget.userStore),
+                ThemeButtonComponent(themeStore: widget.themeStore),
+                const SizedBox(height: 8),
+                LogoutButtonComponent(userStore: widget.userStore),
               ],
             ),
           ),
@@ -83,7 +92,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
           ),
           ScopedBuilder(
             store: widget.userStore,
-            onState: (_, state) => Text(state.toString()),
+            onState: (_, state) => Text(translate.emailInvalid),
             onLoading: (_) => const CircularProgressIndicator(),
             onError: (_, error) => Text(error.toString()),
           ),

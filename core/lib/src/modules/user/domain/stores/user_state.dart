@@ -11,7 +11,7 @@ sealed class UserState {
 }
 
 class AuthenticatedUserState extends UserState {
-  const AuthenticatedUserState(super.user);
+  const AuthenticatedUserState(UserEntity super.user);
 }
 
 class UnauthenticatedUserState extends UserState {

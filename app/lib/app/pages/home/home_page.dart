@@ -8,15 +8,31 @@ import 'layouts/home_tablet_layout.dart';
 
 class HomePage extends StatelessWidget {
   final UserStore userStore;
+  final IntlStore intlStore;
+  final ThemeStore themeStore;
 
-  const HomePage({super.key, required this.userStore});
+  const HomePage({
+    super.key,
+    required this.userStore,
+    required this.intlStore,
+    required this.themeStore,
+  });
 
   @override
   Widget build(BuildContext context) {
     return DsLayoutResolver(
-      mobile: const HomeMobileLayout(),
-      tablet: HomeTabletLayout(userStore: userStore),
-      desktop: HomeDesktopLayout(userStore: userStore),
+      mobile: HomeMobileLayout(
+        themeStore: themeStore,
+      ),
+      tablet: HomeTabletLayout(
+        userStore: userStore,
+        themeStore: themeStore,
+      ),
+      desktop: HomeDesktopLayout(
+        intlStore: intlStore,
+        userStore: userStore,
+        themeStore: themeStore,
+      ),
     );
   }
 }
