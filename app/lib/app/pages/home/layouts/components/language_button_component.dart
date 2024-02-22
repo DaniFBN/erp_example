@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:global_dependencies/global_dependencies.dart';
 
 import '../../../../helpers/intl_helper.dart';
 
@@ -63,9 +62,8 @@ class _LanguageButtonComponentState extends State<LanguageButtonComponent> {
                         children: [
                           InkWell(
                             onTap: () {
-                              context
-                                  .read<IntlStore>()
-                                  .changeLocale(locale.locale);
+                              widget.intlStore.changeLocale(locale.locale);
+
                               clearOverlay();
                             },
                             child: Padding(

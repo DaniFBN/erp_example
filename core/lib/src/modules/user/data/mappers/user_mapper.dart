@@ -1,4 +1,4 @@
-import '../../../../services/firebase/auth/_auth_service.dart';
+import '../../../../core/services/firebase/auth/_auth_service.dart';
 import '../../domain/entities/user_entity.dart';
 
 abstract class UserMapper {

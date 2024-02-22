@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           widget.snackBarService.showSnackBarByText(state.exception.message);
         case SuccessLoginState():
           widget.userStore.changeUser(state.userID);
-          NavigatorService.instance.pushReplacement('/home');
+          NavigatorService.instance.pushReplacement('/home/');
       }
     });
   }

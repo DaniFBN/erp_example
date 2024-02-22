@@ -23,6 +23,7 @@ dependencies:
 
   auth_module:
     path: ../auth_module
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:

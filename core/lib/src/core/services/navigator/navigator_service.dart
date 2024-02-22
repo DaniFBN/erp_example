@@ -1,11 +1,18 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:global_dependencies/global_dependencies.dart';
 
 class NavigatorService {
   static final instance = NavigatorService._();
 
   final GlobalKey<NavigatorState> navigatorKey;
 
-  NavigatorService._() : navigatorKey = GlobalKey<NavigatorState>();
+  NavigatorService._() : navigatorKey = GlobalKey<NavigatorState>() {
+    Modular.to.addListener(() {
+      log('Navigated to: ${Modular.to.path}');
+    });
+  }
 
   NavigatorState get _state => navigatorKey.currentState!;
 

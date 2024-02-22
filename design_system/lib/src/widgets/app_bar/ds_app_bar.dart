@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget> actions;
+
+  /// É uma [String]
   final String title;
 
+  /// Isso é um [StatelessWidget]
   const DsAppBar({
     super.key,
     required this.actions,

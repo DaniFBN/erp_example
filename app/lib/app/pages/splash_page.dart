@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
     ]);
 
     if (widget.userStore.isAuthenticated) {
-      NavigatorService.instance.pushReplacement('/home');
+      NavigatorService.instance.pushReplacement('/home/');
     } else {
       NavigatorService.instance.pushReplacement('/login');
     }

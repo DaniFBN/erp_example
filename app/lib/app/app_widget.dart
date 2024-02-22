@@ -1,12 +1,8 @@
-import 'package:auth_module/auth_module.dart';
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 import 'package:l10n/l10n.dart';
-
-import 'pages/home/home_page.dart';
-import 'pages/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -16,46 +12,33 @@ class AppWidget extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
     Responsive.setSize(size);
 
-    return DiServiceWidget(
-      builder: (context) {
-        final intlStore = context.read<IntlStore>();
-        final themeStore = context.read<ThemeStore>();
-        return AnimatedBuilder(
-          animation: Listenable.merge([
-            intlStore,
-            themeStore,
-          ]),
-          builder: (context, _) {
-            final locale = intlStore.value;
+    Modular.setNavigatorKey(NavigatorService.instance.navigatorKey);
 
-            return MaterialApp(
-              title: 'ERP',
-              scaffoldMessengerKey: context.read<ISnackBarService>().key,
-              navigatorKey: NavigatorService.instance.navigatorKey,
+    final intlStore = Modular.get<IntlStore>();
+    final themeStore = Modular.get<ThemeStore>();
+    final snackBarService = Modular.get<ISnackBarService>();
 
-              // Theme
-              themeMode: themeStore.isLight ? ThemeMode.light : ThemeMode.dark,
-              theme: AppTheme.light,
-              darkTheme: AppTheme.dark,
+    return AnimatedBuilder(
+      animation: Listenable.merge([intlStore, themeStore]),
+      builder: (context, _) {
+        final locale = intlStore.value;
 
-              // Intl
-              supportedLocales: AppLocalizations.supportedLocales,
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
-              locale: locale,
+        return MaterialApp.router(
+          title: 'ERP',
+          scaffoldMessengerKey: snackBarService.key,
 
-              // Route
-              initialRoute: '/',
-              routes: {
-                ...AuthRoutes.routes,
-                '/': (context) => SplashPage(userStore: context.read()),
-                '/home': (context) => HomePage(
-                      userStore: context.read(),
-                      themeStore: context.read(),
-                      intlStore: context.read(),
-                    ),
-              },
-            );
-          },
+          // Modular
+          routerConfig: Modular.routerConfig,
+
+          // Theme
+          themeMode: themeStore.isLight ? ThemeMode.light : ThemeMode.dark,
+          theme: AppTheme.light,
+          darkTheme: AppTheme.dark,
+
+          // Intl
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          locale: locale,
         );
       },
     );
