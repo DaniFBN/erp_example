@@ -1,6 +1,6 @@
 import 'package:global_dependencies/global_dependencies.dart';
 
-import 'home_page.dart';
+import 'ui/pages/home_page.dart';
 
 class HomeModule extends Module {
   @override

@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../helpers/intl_helper.dart';
+import '../../../../../../core/shared/helpers/intl_helper.dart';
 
 class LanguageButtonComponent extends StatefulWidget {
   final IntlStore intlStore;

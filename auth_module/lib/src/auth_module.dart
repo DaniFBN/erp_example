@@ -1,10 +1,10 @@
 import 'package:core/core.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 
-import '../auth_module.dart';
 import 'data/repositories/auth_repository.dart';
 import 'domain/repositories/i_auth_repository.dart';
 import 'domain/stores/login_store.dart';
+import 'ui/pages/login/login_page.dart';
 
 class AuthModule extends Module {
   @override

@@ -2,8 +2,8 @@ import 'package:auth_module/auth_module.dart';
 import 'package:core/core.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 
-import 'pages/home/home_module.dart';
-import 'pages/splash_page.dart';
+import 'modules/home/home_module.dart';
+import 'modules/splash/splash_page.dart';
 
 class AppModule extends Module {
   @override
