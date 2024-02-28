@@ -18,14 +18,16 @@ class HomeMobileLayout extends StatelessWidget {
       drawer: DsMenuBar(
         // TODO(danifbn): Intl
         title: const Text('User'),
-        itemCount: 3,
+        itemCount: 1,
         width: 300,
         itemBuilder: (BuildContext context, int index) {
           return DsMenuBarItem(
-            icon: Icons.add,
+            icon: Icons.store_mall_directory_outlined,
             // TODO(danifbn): Intl
-            title: 'Whatever',
-            onTap: () {},
+            title: 'Ingredients',
+            onTap: () {
+              NavigatorService.instance.push('/ingredient/');
+            },
           );
         },
       ),

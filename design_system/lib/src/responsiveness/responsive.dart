@@ -10,7 +10,7 @@ class Responsive {
     _size = size;
   }
 
-  static bool isMobile() => _size!.width < 500;
+  static bool isMobile() => _size!.width < 550;
   static bool isTablet() => !isMobile() && _size!.width < 1200;
   static bool isDesktop() => !isMobile() && !isTablet();
 

@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 
 import 'modules/home/home_module.dart';
+import 'modules/ingredient/ingredient_module.dart';
 import 'modules/splash/splash_page.dart';
 
 class AppModule extends Module {
@@ -25,6 +26,11 @@ class AppModule extends Module {
     r.module(
       '/home',
       module: HomeModule(),
+      guards: [CanBeAuthenticatedGuard()],
+    );
+    r.module(
+      '/ingredient',
+      module: IngredientModule(),
       guards: [CanBeAuthenticatedGuard()],
     );
   }
