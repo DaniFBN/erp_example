@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -8,10 +9,12 @@ import 'layouts/ingredients_tablet_layout.dart';
 
 class IngredientsPage extends StatefulWidget {
   final IngredientStore ingredientStore;
+  final ThemeStore themeStore;
 
   const IngredientsPage({
     super.key,
     required this.ingredientStore,
+    required this.themeStore,
   });
 
   @override
@@ -33,6 +36,7 @@ class _IngredientsPageState extends State<IngredientsPage> {
     return DsLayoutResolver(
       mobile: IngredientsMobileLayout(
         ingredientStore: widget.ingredientStore,
+        themeStore: widget.themeStore,
       ),
       tablet: const IngredientsTabletLayout(),
       desktop: const IngredientsDesktopLayout(),

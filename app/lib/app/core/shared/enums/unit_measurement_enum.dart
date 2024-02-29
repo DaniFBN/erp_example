@@ -13,4 +13,14 @@ enum UnitMeasurement {
     final value = UnitMeasurement.values.firstWhere((e) => e.code == code);
     return value;
   }
+
+  String? toShow() {
+    return switch (this) {
+      UnitMeasurement.g => 'g',
+      UnitMeasurement.kg => 'Kg',
+      UnitMeasurement.unit => ' unit',
+      UnitMeasurement.ml => 'ml',
+      UnitMeasurement.l => 'L',
+    };
+  }
 }

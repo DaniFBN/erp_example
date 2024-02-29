@@ -158,6 +158,18 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Insira um email válido'**
   String get emailInvalid;
+
+  /// No description provided for @ingredients.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ingredientes'**
+  String get ingredients;
+
+  /// No description provided for @home.
+  ///
+  /// In pt, this message translates to:
+  /// **'Início'**
+  String get home;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

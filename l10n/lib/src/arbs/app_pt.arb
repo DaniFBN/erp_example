@@ -9,5 +9,7 @@
   "passwordRequireNumber": "A senha deve conter um numero",
   "passwordRequireLetter": "A senha deve conter uma letra",
   "passwordShort": "Senha muito pequena",
-  "emailInvalid": "Insira um email válido"
+  "emailInvalid": "Insira um email válido",
+  "ingredients": "Ingredientes",
+  "home": "Início"
 }

@@ -111,7 +111,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/danifbn/.pub-cache/hosted/pub.dev/meta-1.11.0",
+      "rootUri": "file:///Users/danifbn/.pub-cache/hosted/pub.dev/meta-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -242,7 +242,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-02-22T22:22:59.546989Z",
+  "generated": "2024-02-28T23:57:44.084041Z",
   "generator": "pub",
   "generatorVersion": "3.2.5"
 }

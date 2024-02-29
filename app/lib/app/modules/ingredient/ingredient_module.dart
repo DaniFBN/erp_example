@@ -1,5 +1,6 @@
 import 'package:global_dependencies/global_dependencies.dart';
 
+import '../../core/shared/services/http/dio_http_service.dart';
 import '../../core/shared/services/http/i_http_service.dart';
 import 'data/repositories/ingredient_repository.dart';
 import 'domain/repositories/i_ingredient_repository.dart';
@@ -23,6 +24,7 @@ class IngredientModule extends Module {
       '/',
       child: (_) => IngredientsPage(
         ingredientStore: Modular.get(),
+        themeStore: Modular.get(),
       ),
     );
   }

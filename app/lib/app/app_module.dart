@@ -29,7 +29,7 @@ class AppModule extends Module {
       guards: [CanBeAuthenticatedGuard()],
     );
     r.module(
-      '/ingredient',
+      '/ingredients',
       module: IngredientModule(),
       guards: [CanBeAuthenticatedGuard()],
     );

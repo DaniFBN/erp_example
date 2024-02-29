@@ -9,5 +9,7 @@
   "passwordRequireNumber": "The password must contain a number",
   "passwordRequireLetter": "The password must contain a letter",
   "passwordShort": "Password too small",
-  "emailInvalid": "Enter a valid email"
+  "emailInvalid": "Enter a valid email",
+  "ingredients": "Ingredients",
+  "home": "Home"
 }

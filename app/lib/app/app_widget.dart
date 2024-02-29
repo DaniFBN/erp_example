@@ -26,6 +26,7 @@ class AppWidget extends StatelessWidget {
         return MaterialApp.router(
           title: 'ERP',
           scaffoldMessengerKey: snackBarService.key,
+          debugShowCheckedModeBanner: false,
 
           // Modular
           routerConfig: Modular.routerConfig,

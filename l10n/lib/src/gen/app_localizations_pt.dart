@@ -36,4 +36,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emailInvalid => 'Insira um email válido';
+
+  @override
+  String get ingredients => 'Ingredientes';
+
+  @override
+  String get home => 'Início';
 }

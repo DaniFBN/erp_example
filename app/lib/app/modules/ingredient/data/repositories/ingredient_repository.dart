@@ -18,7 +18,6 @@ class IngredientRepository extends Repository implements IIngredientRepository {
       final response = await _http.get('/ingredients?enterprise=$enterpriseID');
       final data = List<Map<String, dynamic>>.from(response.data);
 
-
       // tearoff -> Passar uma função por referencia
 
       // Function é um tipo
