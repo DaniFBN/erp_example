@@ -40,6 +40,12 @@ class AppWidget extends StatelessWidget {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           locale: locale,
+
+          // builder: (context, child) {
+          //   final mediaQuery = MediaQuery.of(context)
+          //       .copyWith(textScaler: TextScaler.noScaling);
+          //   return MediaQuery(data: mediaQuery, child: child ?? Container());
+          // },
         );
       },
     );

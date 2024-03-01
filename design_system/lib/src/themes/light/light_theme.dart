@@ -26,5 +26,14 @@ class LightTheme {
         foregroundColor: Colors.white,
       ),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.all(
+          Radius.circular(Responsive.size(8)),
+        ),
+      ),
+      filled: true,
+    ),
   );
 }

@@ -23,4 +23,14 @@ enum UnitMeasurement {
       UnitMeasurement.l => 'L',
     };
   }
+
+  String get descriptive {
+    return switch (this) {
+      UnitMeasurement.g => 'Gramas',
+      UnitMeasurement.kg => 'Quilograma',
+      UnitMeasurement.unit => 'Unidade',
+      UnitMeasurement.ml => 'Mililitro',
+      UnitMeasurement.l => 'Litro',
+    };
+  }
 }

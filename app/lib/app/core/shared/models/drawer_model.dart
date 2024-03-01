@@ -24,9 +24,4 @@ final drawerItems = [
     url: '/ingredients/',
     icon: Icons.store_mall_directory_outlined,
   ),
-  DrawerModel(
-    name: (translate) => 'GitHub',
-    url: '/github',
-    icon: Icons.store_mall_directory_outlined,
-  ),
 ];

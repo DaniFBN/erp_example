@@ -42,4 +42,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get home => 'Início';
+
+  @override
+  String get name => 'Nome';
+
+  @override
+  String get description => 'Descrição';
+
+  @override
+  String get price => 'Preço';
+
+  @override
+  String get amount => 'Quantidade';
+
+  @override
+  String get unitMeasurement => 'Unidade de medida';
 }

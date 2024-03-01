@@ -38,9 +38,17 @@ class HttpService implements IHttpService {
   }
 
   @override
-  Future<HttpResponse> post(String url, Map<String, dynamic> data) {
-    // TODO: implement post
-    throw UnimplementedError();
+  Future<HttpResponse> post(
+    String url, {
+    required Map<String, dynamic> data,
+  }) async {
+    return HttpResponse(
+      statusCode: 200,
+      data: {
+        'id': Random().nextInt(9999),
+        ...data,
+      },
+    );
   }
 
   @override

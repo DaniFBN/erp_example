@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import '../../../design_system.dart';
+import 'ds_default_field.dart';
 
 typedef FieldValidator = String? Function(String? value);
 
@@ -29,30 +29,19 @@ class DsInternalField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label),
-        SizedBox(height: Responsive.size(4)),
-        TextFormField(
-          controller: controller,
-          obscureText: obscureText,
-          validator: validator,
-          keyboardType: keyboardType,
-          autofillHints: autofillHints,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.all(
-                Radius.circular(Responsive.size(8)),
-              ),
-            ),
-            filled: true,
-            prefixIcon: prefix,
-            suffixIcon: suffix,
-          ),
+    return DsDefaultField(
+      label: label,
+      field: TextFormField(
+        controller: controller,
+        obscureText: obscureText,
+        validator: validator,
+        keyboardType: keyboardType,
+        autofillHints: autofillHints,
+        decoration: InputDecoration(
+          prefixIcon: prefix,
+          suffixIcon: suffix,
         ),
-      ],
+      ),
     );
   }
 }

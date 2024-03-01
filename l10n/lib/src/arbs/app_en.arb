@@ -11,5 +11,10 @@
   "passwordShort": "Password too small",
   "emailInvalid": "Enter a valid email",
   "ingredients": "Ingredients",
-  "home": "Home"
+  "home": "Home",
+  "name": "Name",
+  "description": "Description",
+  "price": "Price",
+  "amount": "Amount",
+  "unitMeasurement": "Unit Measurement"
 }

@@ -4,7 +4,9 @@ import '../../core/shared/services/http/dio_http_service.dart';
 import '../../core/shared/services/http/i_http_service.dart';
 import 'data/repositories/ingredient_repository.dart';
 import 'domain/repositories/i_ingredient_repository.dart';
+import 'domain/stores/add_ingredient_store.dart';
 import 'domain/stores/ingredient_store.dart';
+import 'ui/pages/add_ingredient/add_ingredient_page.dart';
 import 'ui/pages/ingredients/ingredients_page.dart';
 
 class IngredientModule extends Module {
@@ -16,6 +18,7 @@ class IngredientModule extends Module {
     i.addLazySingleton<IHttpService>(HttpService.new);
     i.addLazySingleton<IIngredientRepository>(IngredientRepository.new);
     i.addLazySingleton(IngredientStore.new);
+    i.addLazySingleton(AddIngredientStore.new);
   }
 
   @override
@@ -25,6 +28,12 @@ class IngredientModule extends Module {
       child: (_) => IngredientsPage(
         ingredientStore: Modular.get(),
         themeStore: Modular.get(),
+      ),
+    );
+    r.child(
+      '/add',
+      child: (_) => AddIngredientPage(
+        addIngredientStore: Modular.get(),
       ),
     );
   }

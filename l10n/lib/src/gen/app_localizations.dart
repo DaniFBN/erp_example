@@ -170,6 +170,36 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Início'**
   String get home;
+
+  /// No description provided for @name.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome'**
+  String get name;
+
+  /// No description provided for @description.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descrição'**
+  String get description;
+
+  /// No description provided for @price.
+  ///
+  /// In pt, this message translates to:
+  /// **'Preço'**
+  String get price;
+
+  /// No description provided for @amount.
+  ///
+  /// In pt, this message translates to:
+  /// **'Quantidade'**
+  String get amount;
+
+  /// No description provided for @unitMeasurement.
+  ///
+  /// In pt, this message translates to:
+  /// **'Unidade de medida'**
+  String get unitMeasurement;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

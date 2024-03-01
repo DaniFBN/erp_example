@@ -11,5 +11,10 @@
   "passwordShort": "Senha muito pequena",
   "emailInvalid": "Insira um email válido",
   "ingredients": "Ingredientes",
-  "home": "Início"
+  "home": "Início",
+  "name": "Nome",
+  "description": "Descrição",
+  "price": "Preço",
+  "amount": "Quantidade",
+  "unitMeasurement": "Unidade de medida"
 }
