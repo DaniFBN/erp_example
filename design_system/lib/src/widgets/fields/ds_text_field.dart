@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'ds_internal_field.dart';
 
@@ -8,8 +10,11 @@ class DsTextField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
   final FieldValidator? validator;
+  final int? maxLines;
   final TextInputType? keyboardType;
   final Iterable<String>? autofillHints;
+  final List<TextInputFormatter>? inputFormatters;
+  final bool isRequired;
 
   const DsTextField({
     super.key,
@@ -18,8 +23,11 @@ class DsTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.validator,
+    this.maxLines,
     this.keyboardType,
     this.autofillHints,
+    this.inputFormatters,
+    this.isRequired = true,
   });
 
   @override
@@ -30,7 +38,10 @@ class DsTextField extends StatelessWidget {
       label: label,
       prefix: prefix,
       suffix: suffix,
+      keyboardType: keyboardType,
+      maxLines: maxLines,
       autofillHints: autofillHints,
+      inputFormatters: inputFormatters,
     );
   }
 }

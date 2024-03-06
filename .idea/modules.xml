@@ -8,7 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/design_system/melos_design_system.iml" filepath="$PROJECT_DIR$/design_system/melos_design_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/dev_tools/melos_dev_tools.iml" filepath="$PROJECT_DIR$/dev_tools/melos_dev_tools.iml" />
       <module fileurl="file://$PROJECT_DIR$/global_dependencies/melos_global_dependencies.iml" filepath="$PROJECT_DIR$/global_dependencies/melos_global_dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ingredient_module/melos_ingredient_module.iml" filepath="$PROJECT_DIR$/ingredient_module/melos_ingredient_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/l10n/melos_l10n.iml" filepath="$PROJECT_DIR$/l10n/melos_l10n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packaging_module/melos_packaging_module.iml" filepath="$PROJECT_DIR$/packaging_module/melos_packaging_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_erp.iml" filepath="$PROJECT_DIR$/melos_erp.iml" />
     </modules>
   </component>

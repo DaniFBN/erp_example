@@ -4,6 +4,8 @@ packages:
   - app/
   - core/
   - auth_module/
+  - ingredient_module/
+  - packaging_module/
   - design_system/
   - global_dependencies/
   - dev_tools/

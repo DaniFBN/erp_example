@@ -3,7 +3,6 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'components/logout_button_component.dart';
-import 'components/theme_button_component.dart';
 import 'components/user_image_component.dart';
 
 class HomeTabletLayout extends StatelessWidget {

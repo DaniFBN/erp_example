@@ -1,6 +1,10 @@
 library core;
 
+export 'src/components/_components.dart';
+export 'src/core/enums/unit_measurement_enum.dart';
 export 'src/core/exceptions/app_exception.dart';
+export 'src/core/exceptions/validation_exception.dart';
+export 'src/core/formatters/price_formatter.dart';
 export 'src/core/guards/can_be_authenticated_guard.dart';
 export 'src/core/guards/not_can_be_authenticated_guard.dart';
 export 'src/core/interfaces/repository.dart';
