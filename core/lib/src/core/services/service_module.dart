@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 
@@ -9,6 +10,11 @@ import 'snack_bar/scaffold_messenger_snack_bar_service.dart';
 class ServiceModule extends Module {
   @override
   void exportedBinds(Injector i) {
+    i.addLazySingleton<Dio>(
+      () => Dio(
+        BaseOptions(baseUrl: 'http://192.168.100.6:3000'),
+      ),
+    );
     i.addLazySingleton<IHttpService>(HttpService.new);
     i.addLazySingleton<ISnackBarService>(ScaffoldMessengerSnackBarService.new);
     i.addInstance(FirebaseAuth.instance);

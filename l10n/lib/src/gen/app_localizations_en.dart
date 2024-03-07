@@ -57,4 +57,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unitMeasurement => 'Unit Measurement';
+
+  @override
+  String get packagings => 'Packaging';
 }

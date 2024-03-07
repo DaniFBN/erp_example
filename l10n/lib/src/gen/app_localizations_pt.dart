@@ -57,4 +57,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unitMeasurement => 'Unidade de medida';
+
+  @override
+  String get packagings => 'Embalagens';
 }

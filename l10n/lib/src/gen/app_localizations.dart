@@ -200,6 +200,12 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Unidade de medida'**
   String get unitMeasurement;
+
+  /// No description provided for @packagings.
+  ///
+  /// In pt, this message translates to:
+  /// **'Embalagens'**
+  String get packagings;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -24,4 +24,9 @@ final drawerItems = [
     url: '/ingredients/',
     icon: Icons.store_mall_directory_outlined,
   ),
+  DrawerModel(
+    name: (translate) => translate.packagings,
+    url: '/packaging/',
+    icon: Icons.inventory_2_outlined,
+  ),
 ];

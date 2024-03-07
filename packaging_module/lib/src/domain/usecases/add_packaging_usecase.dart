@@ -15,7 +15,13 @@ class AddPackagingUsecase implements IAddPackagingUsecase {
 
   @override
   AsyncResult<PackagingEntity> call(AddPackagingParam param) async {
-    if (param.name.isEmpty || param.name.contains(' ')) {
+    if (param.enterpriseID < -1) {
+      return Failure(
+        ValidationException('Invalid Enterprise ID', code: 'invalid-name'),
+      );
+    }
+
+    if (param.name.trim().isEmpty || !param.name.trim().contains(' ')) {
       return Failure(
         ValidationException('Name required', code: 'invalid-name'),
       );
@@ -25,6 +31,24 @@ class AddPackagingUsecase implements IAddPackagingUsecase {
       return Failure(
         ValidationException(
           'Description required',
+          code: 'invalid-description',
+        ),
+      );
+    }
+
+    if (param.price <= 0) {
+      return Failure(
+        ValidationException(
+          'Price required',
+          code: 'invalid-description',
+        ),
+      );
+    }
+
+    if (param.amount <= 0) {
+      return Failure(
+        ValidationException(
+          'Amount required',
           code: 'invalid-description',
         ),
       );

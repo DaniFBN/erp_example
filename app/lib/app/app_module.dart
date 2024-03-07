@@ -2,6 +2,7 @@ import 'package:auth_module/auth_module.dart';
 import 'package:core/core.dart';
 import 'package:global_dependencies/global_dependencies.dart';
 import 'package:ingredient_module/ingredient_module.dart';
+import 'package:packaging_module/packaging_module.dart';
 
 import 'modules/home/home_module.dart';
 import 'modules/splash/splash_page.dart';
@@ -31,6 +32,11 @@ class AppModule extends Module {
     r.module(
       '/ingredients',
       module: IngredientModule(),
+      guards: [CanBeAuthenticatedGuard()],
+    );
+    r.module(
+      '/packaging',
+      module: PackagingModule(),
       guards: [CanBeAuthenticatedGuard()],
     );
   }

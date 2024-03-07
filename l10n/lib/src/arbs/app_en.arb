@@ -16,5 +16,6 @@
   "description": "Description",
   "price": "Price",
   "amount": "Amount",
-  "unitMeasurement": "Unit Measurement"
+  "unitMeasurement": "Unit Measurement",
+  "packagings": "Packaging"
 }

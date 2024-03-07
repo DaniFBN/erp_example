@@ -25,6 +25,8 @@ dependencies:
     path: ../auth_module
   ingredient_module:
     path: ../ingredient_module
+  packaging_module:
+    path: ../packaging_module
 
 dev_dependencies:
   flutter_test:

@@ -21,6 +21,7 @@ dependencies:
   global_dependencies:
     path: ../global_dependencies
   brasil_fields: ^1.14.1
+  dio: ^5.4.1
 
 dev_dependencies:
   flutter_test:

@@ -15,7 +15,10 @@ class IngredientRepository extends Repository implements IIngredientRepository {
     int enterpriseID,
   ) async {
     return await execute<List<IngredientEntity>>(() async {
-      final response = await _http.get('/ingredients?enterprise=$enterpriseID');
+      final response = await _http.get(
+        '/ingredients',
+        queryParams: {'enterprise': enterpriseID},
+      );
       final data = List<Map<String, dynamic>>.from(response.data);
 
       // tearoff -> Passar uma função por referencia

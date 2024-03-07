@@ -28,7 +28,7 @@ class DsInternalField extends StatelessWidget {
     this.suffix,
     this.obscureText = false,
     this.validator,
-    this.maxLines,
+    this.maxLines = 1,
     this.keyboardType,
     this.inputFormatters,
     this.autofillHints,
