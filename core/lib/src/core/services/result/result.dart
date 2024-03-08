@@ -26,11 +26,11 @@ class Failure<S> extends Result<S> {
   bool get isSuccess => false;
 
   @override
-  void fold<T>(
+  T fold<T>(
     T Function(S value) onSuccess,
     T Function(AppException value) onFailure,
   ) {
-    onFailure(_value);
+    return onFailure(_value);
   }
 }
 
@@ -46,10 +46,10 @@ class Success<S extends Object> extends Result<S> {
   bool get isSuccess => true;
 
   @override
-  void fold<T>(
+  T fold<T>(
     T Function(S value) onSuccess,
     T Function(AppException value) onFailure,
   ) {
-    onSuccess(_value);
+    return onSuccess(_value);
   }
 }

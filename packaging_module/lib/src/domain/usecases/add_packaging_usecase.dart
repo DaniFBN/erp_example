@@ -15,9 +15,10 @@ class AddPackagingUsecase implements IAddPackagingUsecase {
 
   @override
   AsyncResult<PackagingEntity> call(AddPackagingParam param) async {
-    if (param.enterpriseID < -1) {
+    if (param.enterpriseID <= 0) {
       return Failure(
-        ValidationException('Invalid Enterprise ID', code: 'invalid-name'),
+        ValidationException('Invalid Enterprise ID',
+            code: 'invalid-enterprise-code'),
       );
     }
 
