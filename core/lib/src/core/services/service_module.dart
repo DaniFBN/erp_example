@@ -12,7 +12,7 @@ class ServiceModule extends Module {
   void exportedBinds(Injector i) {
     i.addLazySingleton<Dio>(
       () => Dio(
-        BaseOptions(baseUrl: 'http://192.168.100.6:3000'),
+        BaseOptions(baseUrl: 'http://localhost:3000'),
       ),
     );
     i.addLazySingleton<IHttpService>(HttpService.new);

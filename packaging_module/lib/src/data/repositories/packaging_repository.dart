@@ -14,22 +14,25 @@ class PackagingRepository extends Repository implements IPackagingRepository {
   AsyncResult<List<PackagingEntity>> getPackagingByEnterpriseID(
     int enterpriseID,
   ) async {
-    return await execute<List<PackagingEntity>>(() async {
-      final response = await _http.get('/packaging?enterprise=$enterpriseID');
-      final data = List<Map<String, dynamic>>.from(response.data);
+    return await execute<List<PackagingEntity>>(
+      notFoundMessage: 'Nenhuma embalagem encontrada',
+      () async {
+        final response = await _http.get('/packaging?enterprise=$enterpriseID');
+        final data = List<Map<String, dynamic>>.from(response.data);
 
-      final packaging = data.map(PackagingMapper.fromMap).toList();
+        final packaging = data.map(PackagingMapper.fromMap).toList();
 
-      return packaging;
-    });
+        return packaging;
+      },
+    );
   }
 
   @override
   AsyncResult<PackagingEntity> add(AddPackagingParam param) async {
     return await execute<PackagingEntity>(() async {
-      final response = await _http.post(
+      final response = await _http.post2(
         '/packaging',
-        data: PackagingMapper.addToMap(param),
+        data: HttpData(PackagingMapper.addToMap(param)),
       );
       final data = Map<String, dynamic>.from(response.data);
 

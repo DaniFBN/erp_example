@@ -1,6 +1,6 @@
 import 'package:global_dependencies/global_dependencies.dart';
-import 'package:packaging_module/src/domain/usecases/add_packaging_usecase.dart';
 
+import '../../crud/usecases/add_packaging_usecase.dart';
 import '../../domain/helpers/params/add_packaging_param.dart';
 import 'states/add_packaging_state.dart';
 

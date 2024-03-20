@@ -12,7 +12,7 @@ class IngredientMapper {
       description: map['description'],
       price: map['price'],
       amount: map['amount'],
-      unitMeasurement: UnitMeasurement.fromCode(map['unitMeasurement']),
+      unitMeasurement: UnitMeasurement.values.byName(map['unitMeasurement']),
     );
   }
 
@@ -21,9 +21,9 @@ class IngredientMapper {
       'enterpriseId': param.enterpriseID,
       'name': param.name,
       'description': param.description,
-      'price': param.price,
+      'price': param.price.toString(),
       'amount': param.amount,
-      'unitMeasurement': param.unitMeasurement.code,
+      'unitMeasurement': param.unitMeasurement.name,
     };
   }
 }

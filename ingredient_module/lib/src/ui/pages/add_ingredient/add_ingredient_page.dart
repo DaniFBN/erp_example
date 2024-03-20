@@ -33,8 +33,8 @@ class _AddIngredientPageState extends State<AddIngredientPage> {
     widget.addIngredientStore.observer(
       onState: (state) {
         if (widget.addIngredientStore.isSuccess) {
-          widget.ingredientStore.getIngredientsByEnterprise(23);
-          NavigatorService.instance.pop();
+          widget.ingredientStore.getIngredientsByEnterprise(1);
+          NavigatorService.instance.pushReplacement('/ingredients');
         }
       },
       onError: (error) {

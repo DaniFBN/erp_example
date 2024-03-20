@@ -4,7 +4,6 @@ import 'package:l10n/l10n.dart';
 
 import '../../core.dart';
 import '../core/models/drawer_model.dart';
-import 'theme_button_component.dart';
 
 class MobileTemplateComponent extends StatelessWidget {
   final String title;

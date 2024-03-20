@@ -32,8 +32,8 @@ class _AddPackagingPageState extends State<AddPackagingPage> {
     widget.addPackagingStore.observer(
       onState: (state) {
         if (widget.addPackagingStore.isSuccess) {
-          widget.packagingStore.getPackagingByEnterprise(23);
-          NavigatorService.instance.pop();
+          widget.packagingStore.getPackagingByEnterprise(1);
+          NavigatorService.instance.pushReplacement('/packaging');
         }
       },
       onError: (error) {

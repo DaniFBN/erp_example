@@ -2,6 +2,8 @@ import '../../../../core.dart';
 
 typedef AsyncResult<S> = Future<Result<S>>;
 
+T id<T>(T value) => value;
+
 sealed class Result<S> {
   const Result();
 

@@ -13,20 +13,23 @@ Splash -> Decidir entre login ou home
 # Planejamento
 8h Componentização - OK
 2h Acessibilidade
-4h Animação
-2h Internacionalização
+4h Animação - OK
+2h Internacionalização - OK
+1h Linter - OK
+1h Documentação - OK
+8h Modularização - OK
+8h Arquitetura - OK
+6h Teste - OK
 
-Amanha
-1h Linter
-1h Documentação
-8h Mod
-8h Arch
+
 6h API
-6h Teste
+  HttpService
+  Tratamento de erro
+  Interceptor
 4h Nativo
 2h Deploy
 
-36
+12h
 
 # Arch
 

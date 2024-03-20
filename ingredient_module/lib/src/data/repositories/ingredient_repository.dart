@@ -19,6 +19,7 @@ class IngredientRepository extends Repository implements IIngredientRepository {
         '/ingredients',
         queryParams: {'enterprise': enterpriseID},
       );
+
       final data = List<Map<String, dynamic>>.from(response.data);
 
       // tearoff -> Passar uma função por referencia
