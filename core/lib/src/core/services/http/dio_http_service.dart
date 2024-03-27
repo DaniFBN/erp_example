@@ -3,17 +3,19 @@ import 'package:dio/dio.dart';
 import '../../../../core.dart';
 import 'interceptors/header_interceptor.dart';
 
-class HttpService implements IHttpService {
+class DioHttpService implements IHttpService {
   final Dio _dio;
 
-  HttpService(this._dio) {
+  DioHttpService(this._dio) {
     _dio.interceptors.add(AuthInterceptor());
+    _dio.interceptors.add(LogInterceptor());
   }
 
   @override
   Future<HttpResponse> delete(String url) async {
     try {
       final response = await _dio.delete(url);
+
       return HttpResponse(
         data: response.data,
         statusCode: response.statusCode ?? 200,
@@ -124,3 +126,5 @@ class HttpService implements IHttpService {
     throw UnimplementedError();
   }
 }
+
+

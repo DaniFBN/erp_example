@@ -10,6 +10,7 @@ class AppExceptionMock extends Mock implements AppException {}
 
 void main() {
   const sut = SutRepository();
+  textContrastGuideline;
 
   group('Repository | Success |', () {
     test('asasas', () async {

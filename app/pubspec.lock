@@ -28,7 +28,7 @@ packages:
   auth_module:
     dependency: "direct main"
     description:
-      path: "../auth_module"
+      path: "../modules/auth_module"
       relative: true
     source: path
     version: "0.0.1"
@@ -113,7 +113,7 @@ packages:
   dev_tools:
     dependency: "direct dev"
     description:
-      path: "../dev_tools"
+      path: "../dependencies/dev_tools"
       relative: true
     source: path
     version: "0.0.1"
@@ -236,7 +236,7 @@ packages:
   global_dependencies:
     dependency: "direct main"
     description:
-      path: "../global_dependencies"
+      path: "../dependencies/global_dependencies"
       relative: true
     source: path
     version: "0.0.1"
@@ -251,7 +251,7 @@ packages:
   ingredient_module:
     dependency: "direct main"
     description:
-      path: "../ingredient_module"
+      path: "../modules/ingredient_module"
       relative: true
     source: path
     version: "0.0.1"
@@ -337,7 +337,7 @@ packages:
   packaging_module:
     dependency: "direct main"
     description:
-      path: "../packaging_module"
+      path: "../modules/packaging_module"
       relative: true
     source: path
     version: "0.0.1"

@@ -1,9 +1,0 @@
-include: package:flutter_lints/flutter.yaml
-
-linter:
-  rules:
-    use_super_parameters: true
-    only_throw_errors: true
-    directives_ordering: true
-    prefer_relative_imports: true
-    require_trailing_commas: true

@@ -17,11 +17,14 @@ class AuthInterceptor extends Interceptor {
   }
 
   @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    // TODO: implement onResponse
+    super.onResponse(response, handler);
+  }
+
+  @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
     print(err);
     super.onError(err, handler);
   }
 }
-
-// Problema no contrato -> Json
-// Problema no statusCode
